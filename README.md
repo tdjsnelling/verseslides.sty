@@ -38,3 +38,9 @@ The following basic example shows the helper in use:
 	}
 \end{document}
 ```
+
+Simply add a new `\verseslide{ ... }` for each image you want to produce.
+
+The resulting image will look something like this:
+
+<img src="https://github.com/tdjsnelling/verseslides.sty/assets/6264509/ac6ab828-0d9d-4fa0-8855-ea70390a46af" width="600px" />
