@@ -1,0 +1,31 @@
+\ProvidesPackage{verseslides}
+
+\usepackage{verse, xcolor, tikz}
+
+\newenvironment{slide}{}{} % standalone convert={}multi=slide}
+
+\pgfdeclarelayer{bg} % declare background layer
+\pgfsetlayers{bg,main} % set the order of the layers (main is the standard layer)
+
+\pagestyle{empty} % empty page style
+\setlength{\leftmargini}{0cm} % no verse left margin indent
+\pagecolor[RGB]{255,255,250} % set off-white page background
+
+\newcommand{\verseslide}[1]{
+	\begin{tikzpicture}
+		\node[inner sep=0pt,outer sep=0pt](content){
+			\begin{slide}
+				\begin{minipage}[c][\wd0][c]{\wd0}
+					\begin{verse}[\wd0]
+						{#1}
+					\end{verse}
+				\end{minipage}
+			\end{slide}
+		};
+		\begin{pgfonlayer}{bg}
+			\node[remember picture,overlay,opacity=0.6,inner sep=0pt, outer sep=0pt] at (content.center){
+				\includegraphics[width=330pt,height=330pt]{texture.jpg}
+			};
+		\end{pgfonlayer}
+	\end{tikzpicture}
+}
