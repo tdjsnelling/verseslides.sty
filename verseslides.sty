@@ -11,7 +11,12 @@
 \setlength{\leftmargini}{0cm} % no verse left margin indent
 \pagecolor[RGB]{255,255,250} % set off-white page background
 
+\newlength{\bgsize}
+
 \newcommand{\verseslide}[1]{
+	\setlength{\bgsize}{1\wd0}
+	\addtolength{\bgsize}{2\sa@border@left}
+
 	\begin{tikzpicture}
 		\node[inner sep=0pt,outer sep=0pt](content){
 			\begin{slide}
@@ -24,7 +29,7 @@
 		};
 		\begin{pgfonlayer}{bg}
 			\node[remember picture,overlay,opacity=0.6,inner sep=0pt, outer sep=0pt] at (content.center){
-				\includegraphics[width=330pt,height=330pt]{texture.jpg}
+				\includegraphics[width=\bgsize,height=\bgsize]{texture.jpg}
 			};
 		\end{pgfonlayer}
 	\end{tikzpicture}
