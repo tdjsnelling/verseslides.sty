@@ -2,9 +2,13 @@
 
 A LaTeX helper to output verse as images, suitable for posting to social media platforms like Instagram.
 
+Requires ImageMagick to be installed and the `magick` executable to be available.
+
+The `verseslide` command creates a [verse](https://texdoc.org/serve/verse.pdf/0) environment, so that's the syntax you should use.
+
 ## Usage
 
-Add `verseslides.sty` and `texture.jpg` to your LaTeX project directory.
+Add `verseslides.sty` and `texture.jpg` to your LaTeX project directory or into your system texmf directory.
 
 The following basic example shows the helper in use:
 
@@ -14,8 +18,7 @@ The following basic example shows the helper in use:
 		density=1500,
 		size=1080x1080,
 		outext=.png,
-		convertexe={convert}
-		%convertexe={magick.exe} % windows
+		convertexe={magick}
 	},
 	multi=slide,
 	margin=1.5cm,
