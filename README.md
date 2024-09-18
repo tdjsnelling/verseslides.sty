@@ -4,6 +4,12 @@ A LaTeX helper to output verse as images, suitable for posting to social media p
 
 Requires ImageMagick to be installed and the `magick` executable to be available.
 
+Your compile command should also include the `-shell-escape` option, e.g.
+
+```
+xelatex -synctex=1 -interaction=nonstopmode -shell-escape %.tex
+```
+
 The `verseslide` command creates a [verse](https://texdoc.org/serve/verse.pdf/0) environment, so that's the syntax you should use.
 
 ## Usage
